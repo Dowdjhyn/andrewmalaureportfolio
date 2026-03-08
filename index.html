@@ -1460,7 +1460,7 @@
     }
 
     .social-links-section {
-      margin: 3rem 0;
+      margin: calc(3rem - 30px) 0 3rem;
       position: relative;
     }
 
@@ -1519,9 +1519,7 @@
       transition: transform 0.65s ease;
     }
 
-    .social-flip-btn:hover .social-flip-btn-inner,
-    .social-flip-btn:focus-visible .social-flip-btn-inner,
-    .social-flip-btn:focus-within .social-flip-btn-inner {
+    .social-flip-btn:hover .social-flip-btn-inner {
       transform: rotateY(180deg);
     }
 
@@ -1554,10 +1552,33 @@
       transform: rotateY(180deg);
     }
 
-    .social-flip-btn:hover .social-flip-face,
-    .social-flip-btn:focus-visible .social-flip-face,
-    .social-flip-btn:focus-within .social-flip-face {
+    .social-flip-btn:hover .social-flip-face {
       box-shadow: 0 10px 40px rgba(232,255,71,0.3);
+    }
+
+    .gamer-box {
+      margin: 2rem auto 0;
+      width: min(460px, 100%);
+      padding: 1.2rem 1.5rem;
+      border-radius: 10px;
+      border: 2px solid var(--timeline-alt);
+      background: linear-gradient(135deg, rgba(18,18,26,0.96), rgba(30,20,40,0.94));
+      box-shadow: 0 0 18px rgba(255,107,138,0.2), inset 0 0 22px rgba(255,107,138,0.08);
+      text-align: center;
+    }
+
+    .gamer-box-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: var(--timeline-alt);
+      margin-bottom: 0.5rem;
+    }
+
+    .gamer-box-text {
+      color: var(--timeline-alt);
+      font-size: 1rem;
+      font-style: italic;
+      letter-spacing: 1px;
     }
 
     .legal-body {
@@ -1612,7 +1633,7 @@
     <div class="nav-logo">GD // Portfolio</div>
     <div class="nav-links">
       <a href="#about">About me</a>
-      <a href="#featured">Featured Project</a>
+      <a href="#featured">Phare Project</a>
       <a href="#projects">All My Projects</a>
 
     </div>
@@ -1776,7 +1797,7 @@
           <p class="featured-genre">Action RPG / Soulslike</p>
           <h3 class="featured-title">Claymore</h3>
           <p class="featured-desc">
-            This is my most ambitious project to date, and it's still a work in progress! Since I discovered Dark Souls 3,
+            This is my most ambitious project to date, and it's still a work in progress ! Since I discovered Dark Souls 3,
             I've been dreaming of creating my own Soulslike game. I admit it's not the most original idea, but it's a huge challenge that
             allows me to learn a lot and push my skills to the limit, always with passion ! 
           </p>
@@ -1959,7 +1980,14 @@ During this project, I took on the role of Game Developer and was responsible fo
       </span>
     </a>
   </div>
+
+  <div class="gamer-box">
+    <h3 class="gamer-box-title">I'm still a gamer !</h3>
+    <p class="card-desc">I believe that, to be a good game designer, it's important to play as well. It allows to keep the player perspective in mind and understand his experience to make better games.</p>
   </div>
+  </div>
+
+  
 
   <!-- MODAL MENTIONS LÉGALES -->
   <div id="legal-modal" class="legal-modal">
