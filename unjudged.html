@@ -152,6 +152,7 @@
       line-height: 1.8;
       margin-bottom: 3rem;
       max-width: 800px;
+      text-align: justify;
     }
 
     .project-video {
@@ -278,7 +279,7 @@
     }
 
     .image-card-img {
-      width: 45%;
+      width: 48.5%;
       aspect-ratio: 16/9;
       background: rgba(232,255,71,0.05);
       display: flex;
@@ -287,21 +288,69 @@
       color: var(--muted);
       font-size: 0.9rem;
       flex-shrink: 0;
+      overflow: hidden;
     }
 
     .image-card-content {
+      width: 48.5%;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
+      flex-grow: 0;
+    }
+
+    .image-card-middle {
+      width: calc(3% + 50px);
+      background: transparent;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-card-middle::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: calc(100% + 16px);
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,107,138,0.8) 0,
+        rgba(255,107,138,0.8) 8px,
+        transparent 8px,
+        transparent 16px
+      );
+      animation: dashFlow 2s linear infinite;
+    }
+
+    @keyframes dashFlow {
+      0% { transform: translateX(-50%) translateY(0); }
+      100% { transform: translateX(-50%) translateY(16px); }
+    }
+
+    .image-card:nth-child(3) .image-card-middle {
+      width: 3%;
     }
 
     .image-card-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       letter-spacing: 1px;
       color: var(--accent);
       margin-bottom: 0.8rem;
+    }
+
+    .image-card-content {
+      width: 48.5%;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
     }
 
     .image-card-desc {
@@ -313,6 +362,10 @@
 
     .image-card:nth-child(even) {
       flex-direction: row-reverse;
+    }
+
+    .image-card:nth-child(2) .image-card-img video {
+      transform: scale(1.3);
     }
 
     /* ── ANIMATED CONNECTING LINES ── */
@@ -483,10 +536,12 @@
       <h1 class="project-title">Unjudged</h1>
       
       <p class="project-intro">
-        Unjudged est un jeu de combat vue de dessus où les joueurs doivent survivre à des vagues d'ennemis tout en créant du chaos stratégique. Le projet explore le game feel et la boucle de gameplay pour créer une expérience addictive.
+        You are dead, and you know that you have been a bastard. Once the judgment is made, you will be dead for good. 
+        As long as it is not done, your spirit is not completely free from your body. You decide to escape judgment and trigger a crisis among the angels and demons. Your head is put at a price to prevent you from coming back to life, 
+        you will have to fight to escape death and traverse this funeral domain in search of life.
       </p>
     </div>
-    <div><p>[Vidéo du gameplay ici]</p></div>
+    <div style="background: var(--surface); border-radius: 8px; box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6); overflow: hidden;"><img src="images/ScreenUnjudged.png" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
   </section>
 
   <!-- CONTENT -->
@@ -538,9 +593,10 @@
       <div class="image-card">
         <div class="image-card-img">
           <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-            <source src="videos/Unjudged_Animations.mp4" type="video/mp4">
+            <source src="Videos/Unjudged_Animations.mp4" type="video/mp4">
           </video>
         </div>
+        <div class="image-card-middle"></div>
         <div class="image-card-content">
           <h4 class="image-card-title">Full Animated Enemies</h4>
           <p class="image-card-desc">Description for the first image goes here. This is a sample text that describes the gameplay or feature.</p>
@@ -548,26 +604,28 @@
       </div>
 
       <div class="image-card">
-        <div class="image-card-img">[Image 2]</div>
+        <div class="image-card-img">
+          <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="Videos/UnjudgedCombo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="image-card-middle"></div>
         <div class="image-card-content">
-          <h4 class="image-card-title">Full Animated Character</h4>
-          <p class="image-card-desc">Description for the second image goes here. This is a sample text that describes the gameplay or feature.</p>
+          <h4 class="image-card-title">Combat </h4>
+          <p class="image-card-desc">Description for the first image goes here. This is a sample text that describes the gameplay or feature.</p>
         </div>
       </div>
 
       <div class="image-card">
-        <div class="image-card-img">[Image 3]</div>
-        <div class="image-card-content">
-          <h4 class="image-card-title">Image Title 3</h4>
-          <p class="image-card-desc">Description for the third image goes here. This is a sample text that describes the gameplay or feature.</p>
+        <div class="image-card-img">
+          <img src="images/Code.png" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-      </div>
-
-      <div class="image-card">
-        <div class="image-card-img">[Image 4]</div>
+        <div class="image-card-middle"></div>
         <div class="image-card-content">
-          <h4 class="image-card-title">Image Title 4</h4>
-          <p class="image-card-desc">Description for the fourth image goes here. This is a sample text that describes the gameplay or feature.</p>
+          <h4 class="image-card-title">How I like to code : </h4>
+          <p class="image-card-desc">I like to bring a clear and readable structure to the code, so that I can find my way around it myself, but also so that others 
+            can easily understand and take over if needed. Each element is commented and placed in a meaningful location. Variables are also named explicitly, as are files and folders.
+          </p>
         </div>
       </div>
     </div>
@@ -694,4 +752,3 @@
 
 </body>
 </html>
-
