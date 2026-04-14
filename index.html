@@ -2096,11 +2096,15 @@ During this project, I took on the role of Game Developer and was responsible fo
     const emailTld = 'com';
     const email = `${emailLocal}${at}${emailDomain}${dot}${emailTld}`;
 
+    const htmlEncode = (str) => {
+      return str.split('').map(char => `&#${char.charCodeAt(0)};`).join('');
+    };
+
     const bindRevealEmail = (mailLink, revealButton) => {
       if (!mailLink) return;
 
       const revealEmail = () => {
-        mailLink.textContent = email;
+        mailLink.innerHTML = htmlEncode(email);
         mailLink.setAttribute('href', `mailto:${email}`);
         mailLink.setAttribute('data-revealed', 'true');
 
@@ -2550,6 +2554,5 @@ During this project, I took on the role of Game Developer and was responsible fo
       }, 200);
     });
   </script>
-
 </body>
 </html>
